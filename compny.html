@@ -1,0 +1,693 @@
+<!--
+ * @Description: 
+ * @Author: cct
+ * @Date: 2026-03-12 11:58:01
+ * @LastEditTime: 2026-03-15 17:13:44
+ * @FilePath: /pro_introduction_html/compny.html
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>东莞市大本锡业有限公司 - 公司简介</title>
+    <!-- 图标库，匹配原设计图标风格 -->
+    <!-- <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-100-M/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+        }
+
+        /* 全局配色变量，完全匹配原设计 */
+        :root {
+            --main-dark-green: #165D37;
+            --main-green: #2E7D32;
+            --light-green-bg: #F0F9F2;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --white: #FFFFFF;
+            --border-radius: 8px;
+            --shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            /* 全局字体大小缩放因子 - 110% = 1.1 */
+            --font-scale: 1.2;
+            
+            /* 想恢复到正常大小：修改 --font-scale: 1.0
+            想增大到120%：修改 --font-scale: 1.2
+            想减小到90%：修改 --font-scale: 0.9 */
+        }
+
+        body {
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+            font-size: calc(16px * var(--font-scale));
+        }
+
+        /* 通用容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 通用标题样式，匹配原设计 */
+        .section-title {
+            font-size: calc(22px * var(--font-scale));
+            font-weight: 600;
+            color: var(--main-dark-green);
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--main-green);
+            border-radius: 2px;
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--main-dark-green);
+            padding: 20px 0;
+            color: var(--white);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: calc(24px * var(--font-scale));
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-list a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: calc(16px * var(--font-scale));
+            transition: opacity 0.3s;
+        }
+
+        .nav-list a:hover {
+            opacity: 0.8;
+        }
+
+        /* 公司概述板块 */
+        .about-section {
+            padding: 60px 0;
+            background-color: var(--light-green-bg);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: calc(28px * var(--font-scale));
+            color: var(--main-dark-green);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .about-text p {
+            font-size: calc(16px * var(--font-scale));
+            color: var(--text-gray);
+            margin-bottom: 16px;
+            text-align: justify;
+            text-indent: 2em;
+        }
+
+        .about-img {
+            width: 100%;
+            height: 320px;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 核心产品板块，匹配原设计产品特点卡片 */
+        .product-section {
+            padding: 60px 0;
+        }
+
+        .product-card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 30px 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .product-card .icon {
+            /* width: 150px;
+            height: 150px; */
+            /* background-color: var(--light-green-bg); */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            color: var(--main-green);
+            font-size: 22px;
+        }
+
+        .product-card .icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+        .product-card h3 {
+            font-size: calc(18px * var(--font-scale));
+            color: var(--main-dark-green);
+            margin-bottom: 12px;
+        }
+
+        .product-card p {
+            font-size: calc(14px * var(--font-scale));
+            color: var(--text-gray);
+            line-height: 1.5;
+        }
+
+        /* 企业优势对比板块，匹配原设计优势对比 */
+        .advantage-section {
+            padding: 60px 0;
+            background-color: var(--light-green-bg);
+        }
+
+        .advantage-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .advantage-table thead th {
+            background-color: var(--main-dark-green);
+            color: var(--white);
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: calc(16px * var(--font-scale));
+            width: 50%;
+        }
+
+        .advantage-table tbody td {
+            padding: 16px;
+            background-color: var(--white);
+            vertical-align: top;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .advantage-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .advantage-table ul {
+            list-style: none;
+        }
+
+        .advantage-table li {
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 10px;
+            font-size: calc(15px * var(--font-scale));
+            color: var(--text-gray);
+        }
+
+        .advantage-table li:last-child {
+            margin-bottom: 0;
+        }
+
+        .advantage-table li::before {
+            content: "·";
+            position: absolute;
+            left: 6px;
+            top: 0;
+            color: var(--main-green);
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .advantage-table .advantage-list li::before {
+            content: "✓";
+            color: var(--main-green);
+            font-size: 14px;
+        }
+
+        /* 应用领域板块，完全匹配原设计 */
+        .application-section {
+            padding: 60px 0;
+        }
+
+        .application-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+        }
+
+        .application-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 30px 20px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .application-card:hover {
+            background-color: var(--light-green-bg);
+        }
+
+        .application-card .icon {
+            font-size: 32px;
+            color: var(--main-green);
+            margin-bottom: 16px;
+        }
+
+        .application-card h3 {
+            font-size: calc(16px * var(--font-scale));
+            color: var(--main-dark-green);
+            margin-bottom: 8px;
+        }
+
+        .application-card p {
+            font-size: calc(13px * var(--font-scale));
+            color: var(--text-gray);
+        }
+
+        /* 联系我们板块，匹配原设计 */
+        .contact-section {
+            padding: 60px 0;
+            background-color: var(--light-green-bg);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info h3 {
+            font-size: calc(20px * var(--font-scale));
+            color: var(--main-dark-green);
+            margin-bottom: 24px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .contact-item .icon {
+            color: var(--main-green);
+            font-size: 18px;
+            margin-top: 2px;
+            min-width: 20px;
+        }
+
+        .contact-item p {
+            font-size: calc(15px * var(--font-scale));
+            color: var(--text-gray);
+            margin: 0;
+        }
+
+        .contact-img-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .contact-img {
+            width: 100%;
+            height: 120px;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .factory-img {
+            width: 100%;
+            height: 200px;
+            height: 100%;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .factory-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--main-dark-green);
+            color: var(--white);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: calc(14px * var(--font-scale));
+            opacity: 0.9;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .about-content, .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-list {
+                gap: 15px;
+            }
+
+            .about-text h2 {
+                font-size: calc(24px * var(--font-scale));
+            }
+
+            .section-title {
+                font-size: calc(20px * var(--font-scale));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">东莞市大本锡业有限公司</div>
+            <ul class="nav-list">
+                <li><a href="#about">公司简介</a></li>
+                <li><a href="#product">核心产品</a></li>
+                <li><a href="#advantage">企业优势</a></li>
+                <li><a href="#application">应用领域</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- 公司简介板块 -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <h2 class="section-title">公司简介</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>专注电子焊接领域<br>高端制造解决方案服务商</h2>
+                    <p>东莞市大本锡业有限公司，是一家专注于电子焊接材料与设备研发、生产、销售于一体的高新技术企业，深耕电子焊锡领域多年，为全球高端电子制造行业提供全场景、高品质焊接整体解决方案。</p>
+                    <p>公司主营产品覆盖环保无铅锡膏、无铅锡线、无铅锡条、环保助焊剂、全自动焊锡机五大核心品类，核心高银锡膏采用Sn96.5/Ag3.0/Cu0.5合金配方，专为对焊接性能和可靠性要求极高的应用场景设计，可完美适配高精密电子焊接需求。</p>
+                    <p>我们拥有现代化生产车间、先进的质量检测设备与专业的技术研发团队，每一批产品都经过严格的性能测试与全流程品控，凭借卓越的产品性能、完善的售前售后服务，已成为众多高端电子制造企业的核心供应商，始终以“专业服务·值得信赖·竭诚为您服务”为核心理念，助力客户提升产品品质与生产效率。</p>
+                </div>
+                <div class="about-img">
+                    <!-- 可替换为公司实景图/产品主图 -->
+                    <img src="../pro_introduction_html/company.jpg" alt="大本锡业生产车间">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心产品板块 -->
+    <section class="product-section" id="product">
+        <div class="container">
+            <h2 class="section-title">核心产品</h2>
+            <div class="product-card-grid">
+                <div class="product-card">
+                    <div class="icon">
+                        <!-- <i class="fa fa-flask"></i> -->
+                    <img  src="../pro_introduction_html/xigaohezhao.png" alt="大本锡业生产车间">
+
+                    </div>
+                    <h3>环保无铅锡膏</h3>
+                    <p>高银含量合金配方，优异导电导热性，焊接强度高，低松香残留，适配高精密SMT贴片，符合高端电子制造严苛要求</p>
+                </div>
+                <div class="product-card">
+                    <div class="icon">
+                        <!-- <i class="fa fa-wrench"></i> -->
+                        <img  src="../pro_introduction_html/xixian.jpg" alt="大本锡业生产车间">
+
+                    </div>
+                    <h3>无铅锡线</h3>
+                    <p>润湿性好，焊点光亮饱满，烟雾少，适用于手工焊、机器人焊接，全系列适配各类电子元器件焊接场景</p>
+                </div>
+                <div class="product-card">
+                    <div class="icon">
+                        <!-- <i class="fa fa-bar-chart"></i> -->
+                    <img  src="../pro_introduction_html/xitiaohezhao.jpg" alt="大本锡业生产车间">
+
+                    </div>
+                    <h3>无铅锡条</h3>
+                    <p>高纯度基材，抗氧化性能优异，熔锡渣量少，适用于波峰焊、浸焊工艺，保障批量焊接稳定性与一致性</p>
+                </div>
+                <div class="product-card">
+                    <div class="icon">
+                        <!-- <i class="fa fa-tint"></i> -->
+                        <img  src="../pro_introduction_html/zhuhanji.JPG" alt="大本锡业生产车间">
+                    </div>
+                    <h3>环保助焊剂</h3>
+                    <p>无卤环保配方，活性强上锡快，残留物极少，无需清洗即可达到高绝缘电阻，简化生产工艺，降低生产成本</p>
+                </div>
+                <!-- <div class="product-card">
+                    <div class="icon">
+                        <i class="fa fa-cogs"></i>
+                    </div>
+                    <h3>自动焊锡机</h3>
+                    <p>高精度自动化设计，适配多场景焊接需求，大幅提升生产效率，降低人工成本，配套焊材提供一站式解决方案</p>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 企业优势板块 -->
+    <section class="advantage-section" id="advantage">
+        <div class="container">
+            <h2 class="section-title">企业核心优势</h2>
+            <table class="advantage-table">
+                <thead>
+                    <tr>
+                        <th>行业普遍痛点</th>
+                        <th>大本锡业核心优势</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li>焊接强度不足，易产生疲劳裂纹</li>
+                                <li>导电性能弱，高频高功率场景适配受限</li>
+                                <li>润湿性差，需高活性助焊剂，焊后残留多</li>
+                                <li>品控不稳定，产品批次一致性差</li>
+                                <li>环保不达标，有害物质超标</li>
+                                <li>长期可靠性不足，影响终端产品寿命</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="advantage-list">
+                                <li>超高焊接强度，优异抗疲劳性能，可承受严苛温度循环与机械应力</li>
+                                <li>高银合金配方提升导电导热性，电阻率比标准版本低15%，适配高频高功率场景</li>
+                                <li>优异润湿性，减少焊球缺陷，极低松脂残留，无需清洗即可达到高绝缘电阻</li>
+                                <li>全流程严格质量控制，每批次产品均通过ICP-AES等专业检测，性能稳定一致</li>
+                                <li>符合RoHS环保标准，无卤素、无有害物质，满足现代电子制造业环保要求</li>
+                                <li>卓越长期可靠性，适配高精密间距和微元器件，大幅延长终端产品使用寿命</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- 应用领域板块 -->
+    <section class="application-section" id="application">
+        <div class="container">
+            <h2 class="section-title">应用领域</h2>
+            <div class="application-grid">
+                <div class="application-card">
+                    <div class="icon">
+                        <i class="fa fa-microchip"></i>
+                    </div>
+                    <h3>芯片制造</h3>
+                    <p>半导体封装、晶圆级封装等精密应用</p>
+                </div>
+                <div class="application-card">
+                    <div class="icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>电路板封装</h3>
+                    <p>BGA、CSP、POP等先进封装技术</p>
+                </div>
+                <div class="application-card">
+                    <div class="icon">
+                        <i class="fa fa-mobile"></i>
+                    </div>
+                    <h3>智能手机</h3>
+                    <p>高密度模组、精细间距元件焊接</p>
+                </div>
+                <div class="application-card">
+                    <div class="icon">
+                        <i class="fa fa-desktop"></i>
+                    </div>
+                    <h3>计算机设备</h3>
+                    <p>主板、显卡等高性能硬件制造</p>
+                </div>
+                <div class="application-card">
+                    <div class="icon">
+                        <i class="fa fa-car"></i>
+                    </div>
+                    <h3>汽车电子</h3>
+                    <p>高可靠性要求的车载系统制造</p>
+                </div>
+                <div class="application-card">
+                    <div class="icon">
+                        <i class="fa fa-heartbeat"></i>
+                    </div>
+                    <h3>医疗设备</h3>
+                    <p>精密医疗器械和监测设备生产</p>
+                </div>
+                <div class="application-card">
+                    <div class="icon">
+                        <i class="fa fa-wifi"></i>
+                    </div>
+                    <h3>通信设备</h3>
+                    <p>基站、路由器等网络设备制造</p>
+                </div>
+                <div class="application-card">
+                    <div class="icon">
+                        <i class="fa fa-industry"></i>
+                    </div>
+                    <h3>工业控制</h3>
+                    <p>PLC、工控机等工业设备生产</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们板块 -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">联系我们</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>专业服务 · 值得信赖 · 竭诚为您服务</h3>
+                    <div class="contact-item">
+                        <div class="icon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <p>联系人：陈晓萍</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <p>联系电话：135 6085 8893<br>座机：0769-87900661</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon">
+                            <i class="fa fa-qq"></i>
+                        </div>
+                        <p>QQ：1019377952</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon">
+                            <i class="fa fa-envelope"></i>
+                        </div>
+                        <p>邮箱：dabentin11@sina.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon">
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+                        <p>直营店地址：广东省东莞市塘厦镇塘厦大道北513号一楼<br>工厂地址：广东省东莞市塘厦镇莲湖宝源路6号1栋101室</p>
+                    </div>
+                </div>
+                <div class="contact-imgs">
+                    <!-- <div class="contact-img-group"> -->
+                        <!-- <div class="contact-img"> -->
+                            <!-- 可替换为产品实拍图 -->
+                            <!-- <img src="https://picsum.photos/id/20/400/300" alt="锡膏产品"> -->
+                        <!-- </div> -->
+                        <!-- <div class="contact-img"> -->
+                            <!-- 可替换为产品实拍图 -->
+                            <!-- <img src="https://picsum.photos/id/21/400/300" alt="锡线产品"> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                    <div class="factory-img">
+                        <!-- 可替换为工厂实景图 -->
+                        <img src="../pro_introduction_html/map.png" alt="大本锡业工厂实景">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <p>东莞市大本锡业有限公司 | DONGGUAN DABEN TIN CO.,LTD</p>
+            <p style="margin-top: 8px;">© 2026 版权所有</p>
+        </div>
+    </footer>
+</body>
+</html>
